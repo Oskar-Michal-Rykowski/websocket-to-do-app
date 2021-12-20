@@ -30,7 +30,7 @@ io.on('connection', (socket) => {
     socket.broadcast.emit('addTask', task);
   });
   socket.on('removeTask', (id) => {
-    tasks.filter((task) => task.id !== id);
+    tasks = tasks.filter((task) => task.id !== id);
     socket.broadcast.emit('removeTask', id);
   });
 });
